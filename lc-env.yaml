@@ -3,18 +3,17 @@ version: 1.3.1
 cache: true
  
 interface:
-  # MCP Servers UI configuration
   mcpServers:
     placeholder: 'MCP Servers'
 
 mcpServers:
   fireflies:
-    command: npx
-    args:
-      - mcp-remote
-      - https://api.fireflies.ai/mcp
-      - --header
-      - "Authorization: Bearer ${FIREFLIES_API_KEY}"
+    type: sse  # Change from stdio to sse
+    url: https://api.fireflies.ai/mcp  # Use URL instead of command
+    headers:
+      Authorization: "Bearer ${FIREFLIES_API_KEY}"
+    timeout: 30000
+    initTimeout: 10000
 
 endpoints:
   custom:
@@ -35,7 +34,6 @@ endpoints:
       titleConvo: true
       titleModel: "mixtral-8x7b-32768"
       modelDisplayLabel: "groq"
-
  
     # OpenRouter.ai
     - name: "OpenRouter"
