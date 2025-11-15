@@ -7,7 +7,7 @@ interface:
   mcpServers:
     placeholder: 'MCP Servers'
 
-mcp:
+mcpServers:
   fireflies:
     command: npx
     args:
@@ -15,6 +15,12 @@ mcp:
       - https://api.fireflies.ai/mcp
       - --header
       - "Authorization: Bearer ${FIREFLIES_API_KEY}"
+   puppeteer:
+    type: stdio
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-puppeteer"
     
 endpoints:
   custom:
