@@ -15,13 +15,7 @@ mcpServers:
       - https://api.fireflies.ai/mcp
       - --header
       - "Authorization: Bearer ${FIREFLIES_API_KEY}"
-  puppeteer:  # FIXED: Changed from 3 spaces to 2 spaces
-    type: stdio
-    command: npx
-    args:
-      - -y
-      - "@modelcontextprotocol/server-puppeteer"
-    
+
 endpoints:
   custom:
   
