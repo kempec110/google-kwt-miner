@@ -7,6 +7,14 @@ interface:
   mcpServers:
     placeholder: 'MCP Servers'
 
+mcp:
+  fireflies:
+    command: npx
+    args:
+      - mcp-remote
+      - https://api.fireflies.ai/mcp
+      - --header
+      - "Authorization: Bearer ${FIREFLIES_API_KEY}"
     
 endpoints:
   custom:
