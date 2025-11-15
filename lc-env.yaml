@@ -1,4 +1,4 @@
-version: 1.2.8
+version: 1.3.1
  
 cache: true
  
@@ -15,7 +15,7 @@ mcpServers:
       - https://api.fireflies.ai/mcp
       - --header
       - "Authorization: Bearer ${FIREFLIES_API_KEY}"
-   puppeteer:
+  puppeteer:  # FIXED: Changed from 3 spaces to 2 spaces
     type: stdio
     command: npx
     args:
@@ -69,7 +69,7 @@ endpoints:
           "sonar-medium-chat",
           "sonar-medium-online"
           ]
-        fetch: false # fetching list of models is not supported
+        fetch: false
       titleConvo: true
       titleModel: "sonar-medium-chat"
       summarize: false
@@ -77,4 +77,3 @@ endpoints:
       forcePrompt: false
       dropParams: ["stop", "frequency_penalty"]
       modelDisplayLabel: "Perplexity"
- 
